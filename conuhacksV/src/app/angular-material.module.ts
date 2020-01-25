@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import {
    MatButtonModule,
+   MatCardModule,
    MatToolbarModule,
    MatIconModule,
    MatBadgeModule,
@@ -27,6 +28,7 @@ import {
    imports: [
       CommonModule,
       MatButtonModule,
+      MatCardModule,
       MatToolbarModule,
       MatIconModule,
       MatSidenavModule,
@@ -49,6 +51,7 @@ import {
    exports: [
       MatButtonModule,
       MatToolbarModule,
+      MatCardModule,
       MatIconModule,
       MatSidenavModule,
       MatBadgeModule,
