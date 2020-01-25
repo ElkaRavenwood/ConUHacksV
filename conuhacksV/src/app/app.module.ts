@@ -10,13 +10,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
+import { ListComponent } from './list/list.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
