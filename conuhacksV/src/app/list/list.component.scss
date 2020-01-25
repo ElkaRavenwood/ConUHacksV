@@ -1,5 +1,11 @@
-.list {
-	width: 35%;
-	padding-left: 2em;
-	padding-right: 2em;
+.info {
+	width: 80%;
+}
+
+.list-wrapper {
+	height: 100vh;
+}
+
+.mat-grid-tile .mat-figure {
+	align-items:unset !important;
 }

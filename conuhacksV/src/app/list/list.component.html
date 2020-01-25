@@ -1,18 +1,185 @@
-<mat-list class="list">
-	<mat-list-item>
-		<mat-icon matListAvatar src="" alt=""> image </mat-icon>
-		<h2 matLine>Project Name</h2>
-		<h4 matLine>tags go here</h4>
-		<p matLine>this is the project description hahahaha</p>
-	</mat-list-item>
-</mat-list>
+<mat-grid-list cols="5" rowHeight="fit" class="list-wrapper">
+	<mat-grid-tile [colspan]="2" class="list">
+		<mat-card>
+			<mat-card-header>
+				<mat-card-title>
+					Projects
+				</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+				<mat-list class="list">
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon matListAvatar src="" alt=""> image </mat-icon>
+						<h2 matLine>Project Name</h2>
+						<h4 matLine>tags go here</h4>
+						<p matLine>this is the project description hahahaha</p>
+					</mat-list-item>
+				</mat-list>
+			</mat-card-content>
+		</mat-card>
+	</mat-grid-tile>
 
-<!-- <mat-list>
-	<mat-list-item *ngFor="let proj of projects"> 
-		<mat-icon matListAvatar src={{proj.img}} alt=""> image </mat-icon>
-		<h3 matLine> {{proj.name}} </h3>
-		<strong matLine> {{proj.tags}} </strong>
-		<p matLine> {{proj.description}} </p>
-		<mat-divider></mat-divider>
-	</mat-list-item>
-</mat-list> -->
+	<mat-grid-tile [colspan]="3" class="description" gutterSize="5px">
+		<mat-card class="info">
+			<br/>
+			<br/>
+			<mat-card-header>
+				<mat-card-title>Project Name</mat-card-title>
+				<mat-card-subtitle>Tags</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				Description....<br />
+				<mat-grid-list cols="2">
+					<mat-grid-tile>
+						<mat-card>
+							<mat-card-title>Activity 1</mat-card-title>
+							<mat-card-subtitle>Tags</mat-card-subtitle>
+							<mat-card-content>Description</mat-card-content>
+							<br/>
+							<mat-card-actions>
+								<mat-grid-list cols="2">
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+								</mat-grid-list>
+							</mat-card-actions>
+						</mat-card>
+					</mat-grid-tile>
+					<mat-grid-tile>
+						<mat-card>
+							<mat-card-title>Activity 2</mat-card-title>
+							<mat-card-subtitle>Tags</mat-card-subtitle>
+							<mat-card-content>Description</mat-card-content>
+							<br/>
+							<mat-card-actions>
+								<mat-grid-list cols="2">
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+								</mat-grid-list>
+							</mat-card-actions>
+						</mat-card>
+					</mat-grid-tile>
+					<mat-grid-tile>
+						<mat-card>
+							<mat-card-title>Activity 3</mat-card-title>
+							<mat-card-subtitle>Tags</mat-card-subtitle>
+							<mat-card-content>Description</mat-card-content>
+							<br/>
+							<mat-card-actions>
+								<mat-grid-list cols="2">
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+								</mat-grid-list>
+							</mat-card-actions>
+						</mat-card>
+					</mat-grid-tile>
+					<mat-grid-tile>
+						<mat-card>
+							<mat-card-title>Activity 4</mat-card-title>
+							<mat-card-subtitle>Tags</mat-card-subtitle>
+							<mat-card-content>Description</mat-card-content>
+							<br/>
+							<mat-card-actions>
+								<mat-grid-list cols="2">
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+									<mat-grid-item>
+										<button mat-button>2:30-3:30</button>
+									</mat-grid-item>
+								</mat-grid-list>
+							</mat-card-actions>
+						</mat-card>
+					</mat-grid-tile>
+				</mat-grid-list>
+			</mat-card-content>
+		</mat-card>
+	</mat-grid-tile>
+</mat-grid-list>
+
+<!-- <mat-grid-list cols="5">
+	<mat-grid-tile [colspan]="2">
+		<mat-list-item *ngFor="let proj of projects">
+			<mat-icon matListAvatar src="{{ proj.img }}" alt="">
+				image
+			</mat-icon>
+			<h3 matLine>{{ proj.name }}</h3>
+			<strong matLine> {{ proj.tags }} </strong>
+			<p matLine>{{ proj.description }}</p>
+			<mat-divider></mat-divider>
+		</mat-list-item>
+	</mat-grid-tile>
+	<mat-grid-tile [colspan]="3"> </mat-grid-tile>
+</mat-grid-list>
+ -->
