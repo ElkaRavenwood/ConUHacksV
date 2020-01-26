@@ -15,7 +15,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class ProfileComponent implements OnInit{
 	items: any[];
-	profile: any[];
+	profile: UserModel[];
 	userId: string;
 	constructor(private ps: ProfileService) {
 	}
@@ -36,7 +36,8 @@ export class ProfileComponent implements OnInit{
 	  				email: this.items[i].email,
 	  				tags: this.items[i].preferences,
 	  				password: this.items[i].password,
-	  				avail: this.items[i].availability
+	  				avail: this.items[i].availability,
+	  				img: this.items[i].img
 	  			} 
 	  			console.log(this.profile);
 	  		} else {

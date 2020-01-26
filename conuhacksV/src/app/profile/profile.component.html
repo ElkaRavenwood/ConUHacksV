@@ -1,16 +1,13 @@
 <div class="profile-wrapper" >
-	<mat-grid-list cols="9">
-		<mat-grid-item [colspan]="5">
+	<mat-grid-list cols="10" gutterSpace="5px">
+		<mat-grid-tile [colspan]="2" [rowspan]="3"></mat-grid-tile>
+		<mat-grid-tile [colspan]="6" class="profile-name">
 			<mat-card>
 				<mat-card-title>{{ profile.firstName }} {{ profile.lastName }}</mat-card-title>
 			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="3" [rowspan]="4">
-			<mat-card>
-				<img mat-card-md-image src="{{ profile.img }}" />
-			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="6">
+		</mat-grid-tile>
+		<mat-grid-tile [colspan]="2" [rowspan]="3"></mat-grid-tile>
+		<mat-grid-tile [colspan]="6">
 			<mat-card>
 				<mat-card-subtitle>
 					<strong>Preferences: </strong>{{ profile.tags }}
@@ -19,8 +16,8 @@
 					<strong>Email: </strong> {{ profile.email }} <br />
 				</mat-card-content>
 			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="6">
+		</mat-grid-tile>
+		<mat-grid-tile [colspan]="6">
 			<mat-card>
 				<h4>Availabilities</h4>
 				<grid-list *ngFor="let avail of profile.avail">
@@ -29,42 +26,6 @@
 					</grid-list-item>
 				</grid-list>
 			</mat-card>
-		</mat-grid-item>
+		</mat-grid-tile>
 	</mat-grid-list>
 </div>
-<!-- 
-<div class="profile-wrapper" *ngFor="let item of items">
-	<mat-grid-list cols="9">
-		<mat-grid-item [colspan]="5">
-			<mat-card>
-				<mat-card-title>{{ item.firstName }} {{ item.lastName }}</mat-card-title>
-			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="3" [rowspan]="4">
-			<mat-card>
-				<img mat-card-md-image src="{{ item.img }}" />
-			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="6">
-			<mat-card>
-				<mat-card-subtitle>
-					<strong>Preferences: </strong>{{ item.tags }}
-				</mat-card-subtitle>
-				<mat-card-content>
-					<strong>Email: </strong> {{ item.email }} <br />
-				</mat-card-content>
-			</mat-card>
-		</mat-grid-item>
-		<mat-grid-item [colspan]="6">
-			<mat-card>
-				<h4>Availabilities</h4>
-				<grid-list *ngFor="let avail of item.availability">
-					<grid-list-item>
-						{{ avail }}
-					</grid-list-item>
-				</grid-list>
-			</mat-card>
-		</mat-grid-item>
-	</mat-grid-list>
-</div>
- -->
