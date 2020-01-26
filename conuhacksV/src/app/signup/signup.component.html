@@ -1,79 +1,79 @@
-<mat-horizontal-stepper #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Let's get to know each other</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="First name" formControlName="firstName" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input matInput placeholder="Last name" formControlName="lastName" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input matInput placeholder="Email address" formControlName="email" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  
-  <mat-step>
-    <form>
-      <ng-template matStepLabel>What would you like to volunteer in?</ng-template>
-      <mat-checkbox (change)='checkboxChanged($event)' name='animals'>Animals</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='environment'>Environment & sustainability</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='kids'>Kids and Teenager</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='sports'>Sports</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='food'>Food service</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='disabled'>Disabled</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='medical'>Medical</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='event'>Event</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='technology'>Technology</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='education'>Education</mat-checkbox>
-      <br>
-      <mat-checkbox (change)='checkboxChanged($event)' name='arts'>Arts</mat-checkbox>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <mat-step>
-    <ng-template matStepLabel>When are you available?</ng-template>
-
-      <mat-form-field>
-          <mat-label> I'm available on </mat-label>
-          <mat-select>
-              <mat-option *ngFor="let day of days" [value]="day.value">
-                  {{day.viewValue}}
-              </mat-option>
-          </mat-select>
-
-          <p> from </p>
-          <input matInput [ngxTimepicker]="picker1">
-          <ngx-material-timepicker #picker1 ></ngx-material-timepicker>
-
-          <p> to </p>
-          <input [ngxTimepicker]="picker2">
-          <ngx-material-timepicker #picker2></ngx-material-timepicker>
-
-      </mat-form-field>
-
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="register()" >Register</button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel></ng-template>
+          <mat-form-field>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input matInput placeholder="Last name" formControlName="lastName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input matInput placeholder="Email address" formControlName="email" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <form>
+          <ng-template matStepLabel></ng-template>
+          <mat-checkbox (change)='checkboxChanged($event)' name='animals'>Animals</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='environment'>Environment & sustainability</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='kids'>Kids and Teenager</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='sports'>Sports</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='food'>Food service</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='disabled'>Disabled</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='medical'>Medical</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='event'>Event</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='technology'>Technology</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='education'>Education</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='arts'>Arts</mat-checkbox>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel></ng-template>
+          <mat-form-field>
+              <mat-label><strong>I'm available on</strong> </mat-label>
+              <mat-select>
+                  <mat-option *ngFor="let day of days" [value]="day.value">
+                      {{day.viewValue}}
+                  </mat-option>
+              </mat-select>
+              <p> <strong>from</strong> </p>
+              <input matInput [ngxTimepicker]="picker1">
+              <ngx-material-timepicker #picker1 ></ngx-material-timepicker>
+              <p> <strong>to</strong> </p>
+              <input [ngxTimepicker]="picker2">
+              <ngx-material-timepicker #picker2></ngx-material-timepicker>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="register()" >Register</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>  
+  </mat-card>
+</div>
