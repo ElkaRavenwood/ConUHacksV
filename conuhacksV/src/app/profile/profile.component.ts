@@ -1,14 +1,8 @@
 import { Component, OnInit, Injectable } from "@angular/core";
-
 import { AngularFireAuth } from "@angular/fire/auth";
-import {
-	AngularFireDatabase,
-	FirebaseListObservable
-} from "@angular/fire/database";
-import { AngularFireList } from "@angular/fire";
+import { FirebaseListObservable} from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
-
-// import {ProfileService}  from './ProfileService.ts';
+import { User } from "./UserModel";
 
 @Component({
 	selector: "app-profile",
@@ -17,7 +11,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
 })
 export class ProfileComponent implements OnInit {
 	items: any[];
-	profile: UserModel[];
+	profile: User;
 	userId: string;
 	constructor(private ps: ProfileService) {}
 
@@ -39,13 +33,13 @@ export class ProfileComponent implements OnInit {
 				if (this.items[i].id.localeCompare(this.userId) == 0) {
 					console.log("ids match");
 					this.profile = {
-						firstName: this.items[i].firstName,
-						lastName: this.items[i].lastName,
-						email: this.items[i].email,
-						tags: this.items[i].preferences,
-						password: this.items[i].password,
-						avail: this.items[i].availability,
-						img: this.items[i].img
+						firstName: (this.items[i].firstName as string),
+						lastName: (this.items[i].lastName as string),
+						email:(this.items[i].email as string),
+						prefs: (this.items[i].preferences as string),
+						password: (this.items[i].password as string),
+						avail: (this.items[i].availability as string),
+						img: (this.items[i].img as string)
 					};
 					console.log(this.profile);
 				} else {

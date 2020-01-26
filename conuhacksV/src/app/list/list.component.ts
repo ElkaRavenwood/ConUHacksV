@@ -1,6 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from '@angular/fire/database';
-import { AngularFireList } from '@angular/fire';
+import { FirebaseListObservable } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -36,8 +35,5 @@ export class ListService {
   getProjects (): FirebaseListObservable<any[]> {
   	console.log(this.firestore.collection('project').valueChanges());
   	return this.firestore.collection('project').valueChanges();
-  	
-  	
-  	
   }
 }

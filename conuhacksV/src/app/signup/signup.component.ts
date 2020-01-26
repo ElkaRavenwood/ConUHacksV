@@ -86,20 +86,25 @@ export class SignupComponent implements OnInit {
   public addToDatabase(firstName: string, lastName: string, email: string, password: string) {
     const preferencesID= this.firestore.createId();
 
-    /*this.firestore.collection('preferences').doc((preferencesID as unknown) as string).set(this.preferences);
+    this.firestore.collection('preferences').doc((preferencesID as unknown) as string).set(this.preferences);
     this.firestore.collection('users').add({
       firstName: firstName,
       lastName: lastName,
       email: email,
       preferences: preferencesID,
       password: password
-    })*/
-
-    this.firestore.collection('users').get().toPromise().then(querySnapchot => {
-      querySnapchot.forEach(element => {
-        console.log(element.data());
-      });
     })
+
+    this.afAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(value => {
+        console.log('Success!', value);
+      })
+      .catch(err => {
+        console.log('Something went wrong:',err.message);
+      });    
+
 
   }
 }
