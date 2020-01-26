@@ -33,6 +33,7 @@ export class SignupComponent implements OnInit {
   preferences: Preferences;
   users: Object[];
   preferencesString: string;
+  tags:string;
   days: Day[] = [
     { value: 'Monday', viewValue: 'Monday' },
     { value: 'Tuesday', viewValue: 'Tuesday' },
