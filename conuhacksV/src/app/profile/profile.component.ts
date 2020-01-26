@@ -3,6 +3,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { FirebaseListObservable} from "@angular/fire/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { User } from "./UserModel";
+import { CommunicationService } from "../communication.service";
 
 @Component({
 	selector: "app-profile",
@@ -13,7 +14,8 @@ export class ProfileComponent implements OnInit {
 	items: any[];
 	profile: User;
 	userId: string;
-	constructor(private ps: ProfileService) {}
+	constructor(private ps: ProfileService,
+				private communication: CommunicationService) {}
 
 	ngAfterViewInit() {
 		document.getElementById("logoutButton").addEventListener("click", event => {
@@ -42,6 +44,7 @@ export class ProfileComponent implements OnInit {
 						img: (this.items[i].img as string)
 					};
 					console.log(this.profile);
+					this.communication.preferencesSource.next(this.profile.prefs);
 				} else {
 					console.log("No match" + this.userId + " " + items[i].id);
 				}

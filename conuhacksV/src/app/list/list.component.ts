@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { AngularFireList} from "@angular/fire/database";
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { CommunicationService } from "../communication.service";
 
 @Component({
   selector: 'app-list',
@@ -11,14 +12,20 @@ import { Observable } from 'rxjs';
 
 export class ListComponent implements OnInit {
 
-	projects: any[];
+  projects: any[];
+  preferences: string;
 
-  constructor(private ls: ListService) { }
+  constructor(private ls: ListService,
+              private communication: CommunicationService) { }
 
   ngOnInit() {
   	this.ls.getProjects().subscribe((items) => {
   		this.projects=items;
-  	});
+    });
+    
+    this.communication.preferencesSource.subscribe((msg: string) => {
+      this.preferences = msg;
+    })
   }
 
 }
