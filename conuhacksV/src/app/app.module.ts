@@ -12,6 +12,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { ListComponent } from './list/list.component';
  
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,9 @@ import { ListComponent } from './list/list.component';
     AngularMaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
