@@ -1,5 +1,5 @@
 <div class="profile-wrapper" >
-	<mat-grid-list cols="10" gutterSpace="5px">
+	<mat-grid-list cols="10" gutterSpace="10px">
 		<mat-grid-tile [colspan]="2" [rowspan]="3"></mat-grid-tile>
 		<mat-grid-tile [colspan]="6" class="profile-name">
 			<mat-card>
@@ -7,24 +7,65 @@
 			</mat-card>
 		</mat-grid-tile>
 		<mat-grid-tile [colspan]="2" [rowspan]="3"></mat-grid-tile>
-		<mat-grid-tile [colspan]="6">
+		<mat-grid-tile [colspan]="6" [rowspan]="1">
 			<mat-card>
 				<mat-card-subtitle>
 					<strong>Preferences: </strong>{{ profile.tags }}
 				</mat-card-subtitle>
 				<mat-card-content>
 					<strong>Email: </strong> {{ profile.email }} <br />
+					<strong>Password: </strong> {{ profile.password }} <br />
 				</mat-card-content>
 			</mat-card>
 		</mat-grid-tile>
-		<mat-grid-tile [colspan]="6">
+		<mat-grid-tile [colspan]="6" [rowspan]="6">
 			<mat-card>
-				<h4>Availabilities</h4>
-				<grid-list *ngFor="let avail of profile.avail">
-					<grid-list-item>
-						{{ avail }}
-					</grid-list-item>
-				</grid-list>
+				<mat-card-title>Availabilities</mat-card-title>
+				<mat-list >
+					<mat-list-item matLine>
+						<strong> Monday </strong>
+						<em *ngFor="let time of profile.avail.mon">
+							 --{{ time }} 
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Tuesday </strong>
+						<em *ngFor="let time of profile.avail.tue">
+							--{{ time }}
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Wednesday </strong>
+						<em *ngFor="let time of profile.avail.wed">
+							 --{{ time }}
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Thursday </strong>
+						<em *ngFor="let time of profile.avail.thu">
+							 --{{ time }}
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Friday </strong>
+						<em *ngFor="let time of profile.avail.fri">
+							 --{{ time }}
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Saturday </strong>
+						<em *ngFor="let time of profile.avail.sat">
+							 --{{ time }}
+						</em>
+					</mat-list-item>
+					<mat-list-item matLine>
+						<strong> Sunday </strong>
+						<em *ngFor="let time of profile.avail.sun">
+							 --{{ time }}
+						</em>
+					</mat-list-item>
+
+				</mat-list>
 			</mat-card>
 		</mat-grid-tile>
 	</mat-grid-list>
