@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { ListComponent } from './list/list.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LogOutComponent } from './log-out/log-out.component';
 
  
 import { AngularFireModule } from '@angular/fire';
@@ -30,7 +31,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     LoginComponent,
     SignupComponent,
     ListComponent,
-    ProfileComponent
+    ProfileComponent,
+    LogOutComponent
   ],
   imports: [
     BrowserModule,
