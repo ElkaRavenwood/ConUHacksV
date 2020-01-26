@@ -18,50 +18,50 @@
 				</mat-card-content>
 			</mat-card>
 		</mat-grid-tile>
-		<mat-grid-tile [colspan]="6" [rowspan]="6">
+		<mat-grid-tile [colspan]="3" [rowspan]="4">
 			<mat-card>
 				<mat-card-title>Availabilities</mat-card-title>
 				<mat-list >
 					<mat-list-item matLine>
 						<strong> Monday </strong>
 						<em *ngFor="let time of profile.avail.mon">
-							 --{{ time }} 
+							 {{ time }} 
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Tuesday </strong>
 						<em *ngFor="let time of profile.avail.tue">
-							--{{ time }}
+							{{ time }}
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Wednesday </strong>
 						<em *ngFor="let time of profile.avail.wed">
-							 --{{ time }}
+							 {{ time }}
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Thursday </strong>
 						<em *ngFor="let time of profile.avail.thu">
-							 --{{ time }}
+							 {{ time }}
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Friday </strong>
 						<em *ngFor="let time of profile.avail.fri">
-							 --{{ time }}
+							 {{ time }}
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Saturday </strong>
 						<em *ngFor="let time of profile.avail.sat">
-							 --{{ time }}
+							 {{ time }}
 						</em>
 					</mat-list-item>
 					<mat-list-item matLine>
 						<strong> Sunday </strong>
 						<em *ngFor="let time of profile.avail.sun">
-							 --{{ time }}
+							 {{ time }}
 						</em>
 					</mat-list-item>
 

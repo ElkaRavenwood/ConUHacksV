@@ -16,14 +16,15 @@
 									<mat-icon matListAvatar src="" alt="">
 										image
 									</mat-icon>
-									<h2 matLine>{{ project.name }}</h2>
+									<h2 matLine><strong>{{ project.name }}</strong></h2>
 									<em matLine>{{ project.tags }}</em>
 								</mat-list-item>
 							</mat-list>
 						</mat-expansion-panel-header>
 						<strong>Description : </strong>{{ project.description }} <br/><br/>
-						<strong>Start Time: </strong>{{ project.startTime }} <br/><br/>
-						<strong>End Time: </strong>{{ project.endTime }}
+						<strong>Start Date: </strong>{{ project.startTime.toDate() | date:'yyyy/MM/dd h:mm:ss a'}} <br/><br/>
+						<strong>End Date: </strong>{{ project.endTime.toDate() | date:'yyyy/MM/dd h:mm:ss a' }} <br/><br/>
+						<strong>Nomber of volunteer needed: </strong>{{ project.numberVolunteers }}
 					</mat-expansion-panel>
 					
 				</mat-accordion>
