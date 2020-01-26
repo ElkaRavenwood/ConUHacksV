@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from '@angular/fire/database';
+import { AngularFireList } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+
 export class ListComponent implements OnInit {
 
-  constructor() { }
+	projects: any[];
+
+  constructor(private ls: ListService) { }
 
   ngOnInit() {
+  	this.ls.getProjects().subscribe((items) => {
+  		this.projects=items;
+  	});
   }
 
+}
+
+@Injectable ({providedIn:'root'})
+export class ListService {
+
+	items: FirebaseListObservable<any[]> = null;
+	
+
+  constructor(private firestore: AngularFirestore) { 
+  	
+  }
+
+  getProjects (): FirebaseListObservable<any[]> {
+  	console.log(this.firestore.collection('project').valueChanges());
+  	return this.firestore.collection('project').valueChanges();
+  	
+  	
+  	
+  }
 }

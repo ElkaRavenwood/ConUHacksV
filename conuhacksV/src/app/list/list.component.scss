@@ -6,6 +6,11 @@
 	height: 100vh;
 }
 
-.mat-grid-tile .mat-figure {
-	align-items:unset !important;
+.list-wrapper {
+	background: url(../../assets/pictures/list.jpg);
+	background-size:cover;
+}
+
+.list-item-header {
+	height: 10% !important;
 }
