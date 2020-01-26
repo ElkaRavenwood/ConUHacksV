@@ -11,10 +11,16 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { ListComponent } from './list/list.component';
+import { ProfileComponent } from './profile/profile.component';
+
  
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    ListComponent
+    ListComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +40,11 @@ import { environment } from '../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -5,7 +5,8 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "emitDeclaratorMetaData": true
   },
   "files": [
     "src/test.ts",
