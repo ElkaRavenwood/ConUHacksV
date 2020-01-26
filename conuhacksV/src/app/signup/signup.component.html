@@ -18,6 +18,10 @@
           <mat-form-field>
               <input matInput placeholder="Email address" formControlName="email" required>
           </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input matInput placeholder="Password" formControlName="password" required>
+          </mat-form-field>
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
@@ -47,6 +51,8 @@
           <mat-checkbox (change)='checkboxChanged($event)' name='education'>Education</mat-checkbox>
           <br>
           <mat-checkbox (change)='checkboxChanged($event)' name='arts'>Arts</mat-checkbox>
+          <br>
+          <mat-checkbox (change)='checkboxChanged($event)' name='elder'>Elders</mat-checkbox>
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>

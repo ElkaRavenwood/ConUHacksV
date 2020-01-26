@@ -17,7 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
