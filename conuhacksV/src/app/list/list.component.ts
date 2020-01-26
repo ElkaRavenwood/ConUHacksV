@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { FirebaseListObservable } from '@angular/fire';
+import { AngularFireList} from "@angular/fire/database";
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -25,14 +26,14 @@ export class ListComponent implements OnInit {
 @Injectable ({providedIn:'root'})
 export class ListService {
 
-	items: FirebaseListObservable<any[]> = null;
+	items: AngularFireList<any[]> = null;
 	
 
   constructor(private firestore: AngularFirestore) { 
   	
   }
 
-  getProjects (): FirebaseListObservable<any[]> {
+  getProjects (): Observable<any[]> {
   	console.log(this.firestore.collection('project').valueChanges());
   	return this.firestore.collection('project').valueChanges();
   }

@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
   firstFormGroup: FormGroup;
   preferences: Preferences;
   users: Object[];
+  preferencesString: string;
   days: Day[] = [
     { value: 'Monday', viewValue: 'Monday' },
     { value: 'Tuesday', viewValue: 'Tuesday' },
@@ -48,6 +49,7 @@ export class SignupComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.preferencesString = "";
     this.firstFormGroup = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -81,18 +83,31 @@ export class SignupComponent implements OnInit {
 
   public checkboxChanged(event): void {
     this.preferences[event.source.name] = event.checked;
+    if (event.checked) {
+      if (this.preferencesString === "") {
+        this.preferencesString += this.preferences[event.source.name];
+      } else {
+        this.preferencesString+= ", " + this.preferences[event.source.name];
+      }
+    } else {
+      this.preferencesString = this.preferencesString.replace(this.preferences[event.source.name], "");
+    }
   }
 
   public addToDatabase(firstName: string, lastName: string, email: string, password: string) {
-    const preferencesID= this.firestore.createId();
+    const preferencesID = this.firestore.createId();
+    const userID = this.firestore.createId();
 
     this.firestore.collection('preferences').doc((preferencesID as unknown) as string).set(this.preferences);
-    this.firestore.collection('users').add({
+
+    this.firestore.collection('users').doc((userID as unknown) as string).set({
       firstName: firstName,
       lastName: lastName,
       email: email,
-      preferences: preferencesID,
-      password: password
+      preferences: this.preferencesString,
+      password: password,
+      id: userID,
+      img: "https://thumbs.dreamstime.com/z/group-people-icon-teamwork-vector-illustration-colorful-110482335.jpg"
     })
 
     this.afAuth
@@ -104,7 +119,6 @@ export class SignupComponent implements OnInit {
       .catch(err => {
         console.log('Something went wrong:',err.message);
       });    
-
 
   }
 }
