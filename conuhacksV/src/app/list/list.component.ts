@@ -14,6 +14,10 @@ export class ListComponent implements OnInit {
 
   projects: any[];
   preferences: string;
+  projPrefs=[];
+  splitProjs=[];
+  splitPrefs=[];
+  sorted: any[];
 
   constructor(private ls: ListService,
               private communication: CommunicationService) { }
@@ -21,11 +25,42 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   	this.ls.getProjects().subscribe((items) => {
   		this.projects=items;
+      for (let j = 0; j < items.length; j ++) {
+        this.projPrefs.push(items[j].tags);
+        this.splitProjs.push(this.projPrefs[j].substring(1,this.projPrefs[j].length).split("#"));
+      }
+      
     });
     
     this.communication.preferencesSource.subscribe((msg: string) => {
       this.preferences = msg;
-    })
+      this.splitPrefs = msg.substring(1,this.preferences.length).split("#");
+      this.splitPrefs.sort();
+    });
+
+    // let nums = any[];
+    
+    // for (let i = 0; i < this.splitProjs.length; i ++) {
+    //   for (let k = 0; k <this.splitProjs[i].length; k++) {
+    //     for (let j = 0; j < this.splitPrefs.length; j++) {
+    //         if (this.splitProjs[i][k].localeCompare(this.splitPrefs[j]) == 0) {
+    //           if(!nums[i]) {
+    //             nums[i] = 1;
+    //           } else {
+    //             nums[i] += 1;
+    //           }
+              
+    //           if(++k > this.splitProjs[i].length) break;
+    //         }
+    //       }
+    //     }
+      
+      // nums.push(this.projPrefs[i].localeCompare(this.preferences));
+    // }
+
+    console.log(nums);
+    console.log(this.splitProjs);
+    console.log(this.splitPrefs);
   }
 
 }
@@ -41,7 +76,7 @@ export class ListService {
   }
 
   getProjects (): Observable<any[]> {
-  	console.log(this.firestore.collection('project').valueChanges());
+  	// console.log(this.firestore.collection('project').valueChanges());
   	return this.firestore.collection('project').valueChanges();
   }
 }

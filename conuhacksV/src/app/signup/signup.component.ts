@@ -50,6 +50,7 @@ export class SignupComponent implements OnInit {
   
   ngOnInit() {
     this.preferencesString = "";
+    this.tags="";
     this.firstFormGroup = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -89,8 +90,10 @@ export class SignupComponent implements OnInit {
       } else {
         this.preferencesString+= ", " + this.preferences[event.source.name];
       }
+      this.tags += "#" + event.source.name;
     } else {
       this.preferencesString = this.preferencesString.replace(this.preferences[event.source.name], "");
+      this.tags = this.tags.replace(("#"+event.source.name), "");
     }
   }
 
@@ -104,7 +107,8 @@ export class SignupComponent implements OnInit {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      preferences: this.preferencesString,
+      // preferences: this.preferencesString,
+      preferences:this.tags,
       password: password,
       id: userID,
       img: "https://thumbs.dreamstime.com/z/group-people-icon-teamwork-vector-illustration-colorful-110482335.jpg"

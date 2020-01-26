@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { FirebaseListObservable} from "@angular/fire/database";
+import { FirebaseListObservable} from "@angular/fire/";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { User } from "./UserModel";
 import { CommunicationService } from "../communication.service";
